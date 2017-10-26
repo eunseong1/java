@@ -1,18 +1,24 @@
 package java00.실습_java08_string;
 
+import java.util.Arrays;
+
+import org.apache.ibatis.type.ArrayTypeHandler;
+
+import com.mysql.fabric.xmlrpc.base.Array;
+
 public class jv08_01_String메서드 {
     
     public static void main(String[] args) {
         
         // 0번째부터 12번째 자리까지 있음.
         // prov 길이는 13이다.
-        String prov = "A barking Dog";
+        
                 
         // 문자열 길이: length() . 13이 출력
-        
+     
         // 문자열 추출 : substring()
         // (2번째부터 4번째 자리까지 추출:  bar)
-
+    
         // Dog 를 출력하시오
 
         // 문자열 추출 : substring()
@@ -35,7 +41,7 @@ public class jv08_01_String메서드 {
                 
         // 문자열 치환 : replace()
         // Dog --> Cat 으로 바꾸시오
-
+      
         // 문자열 치환 : replaceAll(). 정규표현식을 사용한 패턴 치환
         // 정규 표현식: ^ --> 시작
         //              $ --> 끝
@@ -49,6 +55,25 @@ public class jv08_01_String메서드 {
         // 문자열 자르기: split()은 배열로 돌려준다.
         // 지정한 문자로 문자열을 나눈다.(배열로 반환)
         // 문자열 prov 를 공백을 기준으로 자르고 결과를 출력하시오.
+        String prov = "74 874 9883 73 9 73646 774";
+        
+        String [] a = prov.split(" ");
+        
+        int b [] = new int [a.length];
+        
+        
+        for (int i = 0; i <= a.length-1; i++) {
+             b[i] = Integer.valueOf(a[i]);
+             
+             
+        }
+           Arrays.sort(b);
+    //배열의 마지막방 구하기 큰수   
+           
+        System.out.println();
+        
+                
+        
         
         // 문자열 공백 제거 : trim()
 
