@@ -28,6 +28,6 @@ public class 유효점수구하기 {
             avg = (double) add / (a-2)  ;
         }
         System.out.println("합계"+add);
-        System.out.printf("%.2f%n",avg );
+        System.out.printf("평균"+"%.2f%n",avg );
     }
 }
