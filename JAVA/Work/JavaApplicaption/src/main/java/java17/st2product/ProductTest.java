@@ -15,7 +15,7 @@ private static int roomid;
         
         //출력
         for (int i = 0; i <= p.length-1; i++) {
-            System.out.println("p"+p.toString());
+            System.out.println(p.toString());
             // i==0 --> book.toString()
          // i==1 --> compatDisc.toString()
          // i==2 --> ConversationBook.toString()
@@ -40,7 +40,7 @@ private static int roomid;
       }
        
     }
-//상품종류 입력받아 배열에 저장하는 코드 출력
+//상품종류 입력받아 배열에 있던 코드 출력
     private static void 상품출력(Product[] p) {
         for (int i = 0; i <= p.length-1; i++) {
             System.out.println("p"+p.toString());
