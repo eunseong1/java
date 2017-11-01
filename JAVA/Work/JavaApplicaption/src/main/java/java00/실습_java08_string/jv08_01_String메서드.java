@@ -70,7 +70,7 @@ public class jv08_01_String메서드 {
            Arrays.sort(b);
     //배열의 마지막방 구하기 큰수   
            
-        System.out.println();
+        System.out.println(a);
         
                 
         

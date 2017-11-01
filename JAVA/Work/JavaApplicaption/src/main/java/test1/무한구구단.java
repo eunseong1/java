@@ -2,8 +2,6 @@ package test1;
 
 import java.util.Scanner;
 
-
-
 public class 무한구구단 {
     public static void main(String[] args) {
         
@@ -24,9 +22,9 @@ public class 무한구구단 {
                 
             }
             
-            if(x == 0){
+            if (x == 0) {
                 break;
-            }else if (y == 0){
+            } else if (y == 0) {
                 break;
             }
             
@@ -40,7 +38,7 @@ public class 무한구구단 {
                     
                 }
             }
-         
+            
         }
         
     }
