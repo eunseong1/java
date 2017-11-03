@@ -13,9 +13,10 @@ public class Conver extends Bo {
         this.회화책 = 회화책;
     }
 
+
     @Override
     public String toString() {
-        return "Conver [회화책=" + 회화책 + "]";
+        return "Conver [회화책=" + 회화책 + ", toString()=" + super.toString() + "]";
     }
 
     public Conver() {

@@ -18,9 +18,11 @@ public class Com extends Pro{
     public void set가수이름(String 가수이름) {
         this.가수이름 = 가수이름;
     }
+
     @Override
     public String toString() {
-        return "Com [앨범제목=" + 앨범제목 + ", 가수이름=" + 가수이름 + "]";
+        return "Com [앨범제목=" + 앨범제목 + ", 가수이름=" + 가수이름 + ", toString()="
+                + super.toString() + "]";
     }
     public Com() {
         super();

@@ -32,11 +32,13 @@ public class Bo extends Pro {
         this.책제목정보 = 책제목정보;
     }
     
+
+    
     @Override
     public String toString() {
-        return "Bo [ISBN번호=" + ISBN번호 + ", 저자=" + 저자 + ", 책제목정보=" + 책제목정보 + "]";
+        return "Bo [ISBN번호=" + ISBN번호 + ", 저자=" + 저자 + ", 책제목정보=" + 책제목정보
+                + ", toString()=" + super.toString() + "]";
     }
-    
     public Bo() {
         super();
     }
