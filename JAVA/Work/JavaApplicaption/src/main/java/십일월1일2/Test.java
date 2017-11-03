@@ -41,6 +41,8 @@ public class Test {
                 System.out.println("birth: " + p.getBirthday());
                 
             }else if (x == 3){
+                
+                pp.remove(x);
                 System.out.println("데이터 삭제를 시작합니다");
                 s.next();
                 System.out.println("데이터 삭제가 완료되었습니다");
