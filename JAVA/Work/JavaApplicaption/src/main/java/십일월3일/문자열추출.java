@@ -12,13 +12,12 @@ public class 문자열추출 {
         
         if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z')) {
             System.out.println("영문자입니다");
-        } else if(('!'<=c && c <= '/' ) || (':'<= c && c <= '@') || ('[' <=c && c <='`' )){
+        } else if (('!' <= c && c <= '/') || (':' <= c && c <= '@')
+                || ('[' <= c && c <= '`')) {
             System.out.println("기호입니다");
-        }else{
+        } else {
             System.out.println("숫자입니다");
         }
-        
-        
         
     }
 }

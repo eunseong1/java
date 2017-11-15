@@ -15,7 +15,7 @@ public class ex20_03_알파벳히스토그램 {
         Map<String, String> map = new HashMap<>();
         
         for (int i = 0; i < 문자들.length(); i++) {
-            String key = 문자들.substring(i, i + 1); //
+            String key = 문자들.substring(i, i + 1);
             
             key = key.toUpperCase(); //대문자로 바꿔오기
             
@@ -39,7 +39,7 @@ public class ex20_03_알파벳히스토그램 {
         
         treeMap.putAll(map); // HashMap -> TreeMap으로 변환
         
-        for (Map.Entry<String, String> elem : treeMap.entrySet()) {
+        for (Map.Entry<String, String> elem : treeMap.entrySet()) { //다음에물어보기 
             
             System.out.println(elem.getKey() + elem.getValue());
         }

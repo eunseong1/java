@@ -69,6 +69,8 @@ public class jv10_03_HashMap {
             System.out.println(elem.getKey() + ". " + elem.getValue() + ",");
         }
         
+        
+        
         // foreach문으로 Map 출력하기. 방법2
         // keySet() 보다 빠르다.
         // http://stove99.tistory.com/96
