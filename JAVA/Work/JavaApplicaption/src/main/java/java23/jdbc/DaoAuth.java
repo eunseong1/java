@@ -100,8 +100,8 @@ public class DaoAuth implements IAuth {
         //SQL 쿼리문 작성
         
         ResultSet r = null;
+        
         try {
-            
             //찾고자 하는 값은 ? 로 바꾼다
             String s = " select * from auth where name like ? ";
             
@@ -109,14 +109,13 @@ public class DaoAuth implements IAuth {
             java.sql.PreparedStatement stmt = this.conn.prepareStatement(s);
             
             //? 자리에 값을 넣기
-            stmt.setString(1, "%" + auth.getName()+"%");
+            stmt.setString(1, "%"+ auth.getName()+"%");
             
           //문장 객체 실행 : executeQuery() or executeUpdate()
             r = stmt.executeQuery();
-        } catch (Exception e) {
             
-            e.printStackTrace();
-            
+        } catch (Exception e) {        
+            e.printStackTrace();          
         }
         
         return r;
@@ -149,12 +148,54 @@ public class DaoAuth implements IAuth {
     
     @Override
     public ResultSet selectDynamic(ModelAuth auth) throws SQLException { 
-        //SQL 쿼리문 작성
+       
         
-        //문장 객체 생성
         
-        //문장 객체 실행 : executeQuery() or executeUpdate()
-        return null;
+        ResultSet ss = null;
+        try {
+            //SQL 쿼리문 작성
+                                        String q = " select * from auth \n ";
+                                               q += " where 1 =1 \n " ;
+    if(auth.getAuthid() != null)          q +=" and authid = ? \n ";
+    if(!auth.getName().isEmpty())         q += " and name = ?  \n ";
+    if(!auth.getBirth().isEmpty())        q += " and birth = ? \n ";
+                   
+     
+            //문장 객체 생성
+            java.sql.PreparedStatement st = this.conn.prepareStatement(q);
+    
+
+            //문장 객체 실행 : executeQuery() or executeUpdate()
+            ss = st.executeQuery();
+           
+            if(auth.getAuthid() != null){
+                st.setInt(1, auth.getAuthid());
+            }
+            if(!auth.getName().isEmpty()){
+                st.setString(1, auth.getName());   
+            }else if (!auth.getName().isEmpty()){
+                 st.setString(2, auth.getName());
+            }
+            if(!auth.getBirth().isEmpty()){
+                st.setString(1, auth.getBirth());
+                
+            }else if(!auth.getBirth().isEmpty()){
+                
+                st.setString(2, auth.getBirth());
+                
+            }else if(!auth.getBirth().isEmpty()){
+                
+                st.setString(3, auth.getBirth());
+            }
+            
+            
+        } catch (Exception e) {
+          
+            e.printStackTrace();
+            
+        }
+     
+        return ss;
     }
     
     @Override
@@ -163,23 +204,23 @@ public class DaoAuth implements IAuth {
         int r = -1;
         try {
             //SQL 쿼리문 작성
-            String s = "";
-            s += " insert into auth(authid , name , birth) /n";
-            s += " values( ?    ,   ?  ,? ) /n ";
+            String s = " insert into ";
+            s += "  auth(authid,name,birth) ";
+            s += " values(?,?,?)  ";
             
             //문장 객체 생성
             java.sql.PreparedStatement st = this.conn.prepareStatement(s);
-            
-          //문장 객체 실행 : executeQuery() or executeUpdate()
-            r = st.executeUpdate();
             
           //? 자리에 값을 넣기
             st.setInt(1, auth.getAuthid());
             st.setString(2, auth.getName());
             st.setString(3, auth.getBirth() );
             
+          //문장 객체 실행 : executeQuery() or executeUpdate()
+            r = st.executeUpdate();
+            
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
             
         }
@@ -189,13 +230,15 @@ public class DaoAuth implements IAuth {
     @Override
     public int updateAuth(ModelAuth whereauth, ModelAuth setauth)
             throws SQLException {     
+        
+        int r = -1;
         try {
             //SQL 쿼리문 작성
-            String s = "update auth /n";
-            s += " set name = ? /n";       
-            s += " birth = ? /n";
-            s += " where 1 = 1 /n" ;
-            s += " and authid = ? /n";
+            String s = " update auth  ";
+            s += " set name = ? , birth = ?  ";       
+            s += "where  1 = 1	";
+            s += "and authid = ? " ;
+            
             
             //문장 객체 생성
             
@@ -206,16 +249,16 @@ public class DaoAuth implements IAuth {
             st.setInt(3 , whereauth.getAuthid());
             
             //문장 객체 실행 : executeQuery() or executeUpdate()
-            st.executeUpdate(s);
+          r =  st.executeUpdate();
             
         } catch (Exception e) {
             
-            // TODO Auto-generated catch block
+           
             e.printStackTrace();
             
         }
         
-        return 0;
+        return r;
     }
     
     @Override
@@ -228,18 +271,19 @@ public class DaoAuth implements IAuth {
             String s = "";
             s += "  delete from auth ";
             s += "  where 1 = 1  ";
-            s += " and name = ? ";
-            s += " and birth = ? ";
+            s += " and authid = ? ";
+        
             
             //문장 객체 생성
             java.sql.PreparedStatement st = this.conn.prepareStatement(s);
             
             //? 자리에 값을 넣기
-            st.setString(1, auth.getName());
-            st.setString(2, auth.getBirth());
+            st.setInt(1, auth.getAuthid());
+        
             
             //문장 객체 실행 : executeQuery() or executeUpdate()
            r = st.executeUpdate();
+           
         } catch (Exception e) {
             
             e.printStackTrace();
