@@ -83,6 +83,9 @@ dependencies {
     compile "org.springframework:spring-jdbc:4.1.7.RELEASE"
     compile "org.springframework:spring-tx:4.1.7.RELEASE"
 
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
+	
 
     // mysql 라이브러리
     compile 'mysql:mysql-connector-java:5.1.38'
