@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title2</title>
+<style type="text/css">
+        label {width: 200px;  display:inline-block; vertical-align:top;}
+        div {display:table; margin-left: auto; margin-right: auto;}
+    </style>
+</head>
+<body>
+    <h1>상품 주문서</h1>
+    <form>
+
+        <!-- 개인 정보 -->
+        <fieldset >
+            <legend><b>개인 정보</b></legend>
+            <ul>
+                <label><strong>이름</strong> </label><input type="text" name="name"><br><br>
+                <label><strong>연락처</strong> </label><input type="number" name="number">
+            </ul>
+        </fieldset>
+
+        <!-- 배송지 정보 -->
+        <fieldset>
+            <legend><b>배송지 정보</b></legend>
+<ul>
+                <label><strong>주소</strong> </label><input type="text" name="name"><br>
+                <label><strong>전화번호</strong> </label><input type="number" name="number"><br>
+                <label><strong>메모</strong> </label><textarea rows="5" cols="30" name="contents"></textarea>
+</ul>
+        </fieldset>
+
+        <!-- 주문 정보 -->
+        <fieldset>
+
+            <legend><b>주문 정보</b></legend>
+            <ul>
+<input type="checkbox" name=""><label>과테말라 안티구아 (100g)</label> <input >개<br>
+<input type="checkbox" name=""><label>인도네시아 만델링 (100g)</label> <input type="text" name="">개<br>
+<input type="checkbox" name=""><label>탐나는도다(블렌딩) (100g)</label> <input type="text" name="">개
+</ul>
+        </fieldset>
+
+
+        <!-- 주문하기 -->
+        <ul>
+        <input type="submit" name="" value="주문하기">
+
+        <!-- 다시작성 : form 입력 값 초기화  -->
+
+        <input type="reset" name="" value="다시작성">
+        </ul>
+    </form>
+
+</body>
+</html>
